@@ -114,13 +114,23 @@ namespace WebAppBarang
 
         protected void gv_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            Console.WriteLine(e.CommandName);
-            if (e.CommandName.Equals("Select")) {                
-                string id = gv.DataKeys[gv.SelectedRow.RowIndex].Value.ToString(); //gv.SelectedRow.Cells[1].ToString(); //(gv.SelectedRow.FindControl("lbl_id") as Label).Text.ToString().Trim();
-                string jenis = gv.SelectedRow.Cells[2].Text.ToString(); //(gv.SelectedRow.FindControl("tb_jenis") as TextBox).Text.ToString().Trim();
+            
+            if (e.CommandName.Equals("Select"))
+            {
+                string[] commandArguments = e.CommandArgument.ToString().Split(new char[] {'-'});
 
-                lbl_status.InnerText = id + " - " + jenis;
+                string nomer = commandArguments[0];
+                string id = commandArguments[1]; // gv.Rows[idx].Cells[0].Text.ToString();
+                string jenis = commandArguments[2]; //(gv.SelectedRow.FindControl("tb_jenis") as TextBox).Text.ToString().Trim();
+
+                lbl_status.InnerText = "("+ nomer + ") " + id + " - " + jenis;
             }
+        }
+
+        protected void gv_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gv.PageIndex = e.NewPageIndex;
+            loadGrid();
         }
     }
 }

@@ -7,12 +7,14 @@
     <title></title>
 </head>
 <body>
+    <p>Buka: <a href="Bahan.aspx">Bahan</a> | <a href="Barang.aspx">Barang</a></p>
     <form id="form1" runat="server">
         <asp:GridView ID="gv" runat="server" 
-            AutoGenerateColumns="false" 
-            AllowPaging="true" 
-            PageSize="5" 
-            AllowSorting="true"
+            AutoGenerateColumns="False" 
+            AllowPaging="True" 
+            PageSize="2" 
+            AllowSorting="True" 
+            OnPageIndexChanging="gv_PageIndexChanging"          
             OnRowEditing="gv_RowEditing" 
             OnRowUpdating="gv_RowUpdating" 
             OnRowCancelingEdit="gv_RowCancelingEdit" 
@@ -41,7 +43,17 @@
                         <asp:TextBox ID="tb_jenis_footer" runat="server"></asp:TextBox>
                     </footerTemplate>
                 </asp:TemplateField>
-                <asp:CommandField ShowEditButton="true" ShowCancelButton="true" ShowDeleteButton="true" ShowSelectButton="true"/>
+                <asp:TemplateField ShowHeader="False">
+                    <EditItemTemplate>
+                        <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="True" CommandName="Update" Text="Update"></asp:LinkButton>
+                        &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel"></asp:LinkButton>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit"></asp:LinkButton>
+                        &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Select" Text="Select" CommandArgument='<%# (Container.DataItemIndex + 1) + "-" + Eval("ID_JENIS") + "-" + Eval("JENIS") %>'></asp:LinkButton>
+                        &nbsp;<asp:LinkButton ID="LinkButton3" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete"></asp:LinkButton>
+                    </ItemTemplate>
+                </asp:TemplateField>
             </Columns>
         </asp:GridView>
         <p id="lbl_status" runat="server"></p>

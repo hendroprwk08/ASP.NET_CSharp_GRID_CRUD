@@ -56,7 +56,8 @@ namespace WebAppBarang
         //TAMBAH DATA PADA FOOTER
         protected void gv_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName.Equals("cn_tambah")) {
+            if (e.CommandName.Equals("Insert"))
+            {
                 DatabaseClass d = new DatabaseClass();
 
                 try

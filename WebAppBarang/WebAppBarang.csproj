@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Bahan.aspx" />
+    <Content Include="Barang.aspx" />
     <Content Include="database.sql" />
     <Content Include="Global.asax" />
     <Content Include="Jenis.aspx" />
@@ -80,6 +81,13 @@
     </Compile>
     <Compile Include="Bahan.aspx.designer.cs">
       <DependentUpon>Bahan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Barang.aspx.cs">
+      <DependentUpon>Barang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Barang.aspx.designer.cs">
+      <DependentUpon>Barang.aspx</DependentUpon>
     </Compile>
     <Compile Include="DatabaseClass.cs" />
     <Compile Include="Global.asax.cs">

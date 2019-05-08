@@ -7,6 +7,7 @@
     <title></title>
 </head>
 <body>
+    <p>Buka: <a href="Jenis.aspx">Jenis</a> | <a href="Barang.aspx">Barang</a></p>
     <form id="form1" runat="server">
         <asp:GridView 
             ID="gv"
@@ -68,7 +69,7 @@
                         <asp:Button  ID="bt_batal" runat="server" CommandName="Cancel" Text="Batal" /></Button>
                     </EditItemTemplate>
                     <FooterTemplate>
-                        <asp:Button  ID="bt_tambah" runat="server" CommandName="cn_tambah" Text="Tambah" /></Button>                    
+                        <asp:Button  ID="bt_tambah" runat="server" CommandName="Insert" Text="Tambah" /></Button>                    
                     </FooterTemplate>
                 </asp:TemplateField>
             </Columns>
