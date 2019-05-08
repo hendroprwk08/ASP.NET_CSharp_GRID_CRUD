@@ -4,3 +4,9 @@ D:\Google Drive\aplikasibuatanku\workshop_asp_basic\WebAppBarang\WebAppBarang\bi
 D:\Google Drive\aplikasibuatanku\workshop_asp_basic\WebAppBarang\WebAppBarang\obj\Debug\WebAppBarang.csprojResolveAssemblyReference.cache
 D:\Google Drive\aplikasibuatanku\workshop_asp_basic\WebAppBarang\WebAppBarang\obj\Debug\WebAppBarang.dll
 D:\Google Drive\aplikasibuatanku\workshop_asp_basic\WebAppBarang\WebAppBarang\obj\Debug\WebAppBarang.pdb
+D:\Google Drive\aplikasibuatanku\GIT_Workshop_CRUD_ASP\ASP.NET_CSharp_GRID_CRUD\WebAppBarang\bin\WebAppBarang.dll.config
+D:\Google Drive\aplikasibuatanku\GIT_Workshop_CRUD_ASP\ASP.NET_CSharp_GRID_CRUD\WebAppBarang\bin\WebAppBarang.dll
+D:\Google Drive\aplikasibuatanku\GIT_Workshop_CRUD_ASP\ASP.NET_CSharp_GRID_CRUD\WebAppBarang\bin\WebAppBarang.pdb
+D:\Google Drive\aplikasibuatanku\GIT_Workshop_CRUD_ASP\ASP.NET_CSharp_GRID_CRUD\WebAppBarang\obj\Debug\WebAppBarang.csprojResolveAssemblyReference.cache
+D:\Google Drive\aplikasibuatanku\GIT_Workshop_CRUD_ASP\ASP.NET_CSharp_GRID_CRUD\WebAppBarang\obj\Debug\WebAppBarang.dll
+D:\Google Drive\aplikasibuatanku\GIT_Workshop_CRUD_ASP\ASP.NET_CSharp_GRID_CRUD\WebAppBarang\obj\Debug\WebAppBarang.pdb

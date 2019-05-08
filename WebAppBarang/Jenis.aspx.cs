@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace WebAppBarang
 {
-    public partial class Barang : System.Web.UI.Page
+    public partial class Jenis : System.Web.UI.Page
     {
         DataTable dt;
 
@@ -25,12 +25,12 @@ namespace WebAppBarang
             DatabaseClass d = new DatabaseClass();
 
             try
-            {                
+            {
                 d.openDb();
-                var s = "select * from bahan";
+                var s = "select * from jenis";
                 dt = new DataTable();
                 dt = d.read(s);
-                
+
                 Console.WriteLine(dt.Rows.Count.ToString());
 
                 gv.DataSource = dt;
@@ -46,59 +46,12 @@ namespace WebAppBarang
             }
         }
 
-        //PINDAH HALAMAN
-        protected void gv_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
-            gv.PageIndex = e.NewPageIndex;
-            loadGrid();
-        }
-
-        //TAMBAH DATA PADA FOOTER
-        protected void gv_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
-            if (e.CommandName.Equals("cn_tambah")) {
-                DatabaseClass d = new DatabaseClass();
-
-                try
-                {
-                    string id = (gv.FooterRow.FindControl("tb_id_footer") as TextBox).Text.ToString().Trim();
-                    string bahan = (gv.FooterRow.FindControl("tb_bahan_footer") as TextBox).Text.ToString().Trim();
-                    string deskripsi = (gv.FooterRow.FindControl("tb_deskripsi_footer") as TextBox).Text.ToString().Trim();
-
-                    d.openDb();
-                    
-                    var s = "insert into bahan (id_bahan, bahan, deskripsi) values ('" + id + "', '" + bahan + "', '" + deskripsi + "')";
-                    Console.WriteLine(s);
-                    d.execute(s);
-
-                    loadGrid();
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-                finally
-                {
-                    d.closeDB();
-                }
-            }
-        }
-
-        //EDIT DAN MENAMPILKAN TEMPLATE EDIT
         protected void gv_RowEditing(object sender, GridViewEditEventArgs e)
         {
             gv.EditIndex = e.NewEditIndex;
             loadGrid();
         }
 
-        //batalkan edit
-        protected void gv_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
-        {
-            gv.EditIndex = -1;
-            loadGrid();
-        }
-
-        //update data
         protected void gv_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
             DatabaseClass d = new DatabaseClass();
@@ -106,12 +59,11 @@ namespace WebAppBarang
             try
             {
                 string id = (gv.Rows[e.RowIndex].FindControl("lbl_id") as Label).Text.ToString().Trim();
-                string bahan = (gv.Rows[e.RowIndex].FindControl("tb_bahan") as TextBox).Text.ToString().Trim();
-                string deskripsi = (gv.Rows[e.RowIndex].FindControl("tb_deskripsi") as TextBox).Text.ToString().Trim();
+                string jenis = (gv.Rows[e.RowIndex].FindControl("tb_jenis") as TextBox).Text.ToString().Trim();
 
                 d.openDb();
 
-                var s = "update bahan set bahan = '" + bahan + "', deskripsi =  '" + deskripsi + "' where id_bahan = '" + id + "'"; 
+                var s = "update jenis set jenis = '" + jenis + "' where id_jenis = '" + id + "'";
                 Console.WriteLine(s);
                 d.execute(s);
 
@@ -127,7 +79,13 @@ namespace WebAppBarang
             }
         }
 
-        //eksekusi penghapusan data
+        protected void gv_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            gv.EditIndex = -1;
+            loadGrid();
+        }
+
+
         protected void gv_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             DatabaseClass d = new DatabaseClass();
@@ -135,14 +93,14 @@ namespace WebAppBarang
             try
             {
                 string id = (gv.Rows[e.RowIndex].FindControl("lbl_id") as Label).Text.ToString().Trim();
-             
+               
                 d.openDb();
 
-                var s = "delete from bahan where id_bahan = '" + id + "'";
+                var s = "delete jenis where id_jenis = '" + id + "'";
                 Console.WriteLine(s);
                 d.execute(s);
 
-                loadGrid();
+                gv_RowCancelingEdit(null, null);
             }
             catch (Exception ex)
             {
@@ -151,6 +109,17 @@ namespace WebAppBarang
             finally
             {
                 d.closeDB();
+            }
+        }
+
+        protected void gv_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            Console.WriteLine(e.CommandName);
+            if (e.CommandName.Equals("Select")) {                
+                string id = gv.DataKeys[gv.SelectedRow.RowIndex].Value.ToString(); //gv.SelectedRow.Cells[1].ToString(); //(gv.SelectedRow.FindControl("lbl_id") as Label).Text.ToString().Trim();
+                string jenis = gv.SelectedRow.Cells[2].Text.ToString(); //(gv.SelectedRow.FindControl("tb_jenis") as TextBox).Text.ToString().Trim();
+
+                lbl_status.InnerText = id + " - " + jenis;
             }
         }
     }

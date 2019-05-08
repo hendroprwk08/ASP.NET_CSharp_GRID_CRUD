@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{B4D9B9DB-3DE4-4D47-8159-5BF4270EFC63}</ProjectGuid>
+    <ProjectGuid>{376FACC6-BD71-49C5-8A0C-6ADD43B6960A}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WebAppBarang</RootNamespace>
-    <AssemblyName>WebAppBarang</AssemblyName>
+    <RootNamespace>WebAppBarangWithLink</RootNamespace>
+    <AssemblyName>WebAppBarangWithLink</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -66,12 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Bahan.aspx" />
-    <Content Include="database.sql" />
-    <Content Include="Global.asax" />
-    <Content Include="Jenis.aspx" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bahan.aspx.cs">
@@ -82,21 +77,7 @@
       <DependentUpon>Bahan.aspx</DependentUpon>
     </Compile>
     <Compile Include="DatabaseClass.cs" />
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Jenis.aspx.cs">
-      <DependentUpon>Jenis.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Jenis.aspx.designer.cs">
-      <DependentUpon>Jenis.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -111,9 +92,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>2148</DevelopmentServerPort>
+          <DevelopmentServerPort>2114</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:2148/</IISUrl>
+          <IISUrl>http://localhost:2114/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

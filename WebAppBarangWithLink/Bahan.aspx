@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Bahan.aspx.cs" Inherits="WebAppBarang.Barang" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Bahan.aspx.cs" Inherits="WebAppBarangWithLink.Bahan" %>
 
 <!DOCTYPE html>
 
@@ -8,23 +8,10 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:GridView 
-            ID="gv"
-            runat="server" 
-            AutoGenerateColumns="False" 
-            DataKeyNames="id_bahan" 
-            EmptyDataText="Tak ada data." 
-            ShowFooter="true" 
-            AllowPaging="true" 
-            OnPageIndexChanging="gv_PageIndexChanging"
-            PageSize="5"
-            OnRowCommand="gv_RowCommand"
-            OnRowEditing="gv_RowEditing" 
-            OnRowCancelingEdit="gv_RowCancelingEdit" 
-            OnRowDeleting="gv_RowDeleting" 
-            OnRowUpdating="gv_RowUpdating">
-            
-            <Columns>
+    <div>
+    
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="true"  PageSize="5" AllowSorting="true" AutoGenerateColumns="false">
+             <Columns>
                 <asp:TemplateField HeaderText="#" ItemStyle-Width="70">
                     <ItemTemplate>
                         <asp:Label ID="lbl_id" runat="server" Text='<%# Eval("ID_BAHAN") %>'></asp:Label>
@@ -58,21 +45,11 @@
                         <asp:TextBox ID="tb_deskripsi_footer" runat="server"></asp:TextBox>
                     </FooterTemplate>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="" ItemStyle-Width="120">
-                    <ItemTemplate>
-                        <asp:Button  ID="bt_ubah" runat="server" CommandName="Edit" Text="Ubah" /></Button>
-                        <asp:Button  ID="bt_hapus" runat="server" CommandName="Delete" Text="Hapus" /></Button>
-                    </ItemTemplate>
-                    <EditItemTemplate>
-                        <asp:Button  ID="bt_perbarui" runat="server" CommandName="Update" Text="Perbarui" /></Button>
-                        <asp:Button  ID="bt_batal" runat="server" CommandName="Cancel" Text="Batal" /></Button>
-                    </EditItemTemplate>
-                    <FooterTemplate>
-                        <asp:Button  ID="bt_tambah" runat="server" CommandName="cn_tambah" Text="Tambah" /></Button>                    
-                    </FooterTemplate>
-                </asp:TemplateField>
+                 <asp:CommandField ShowEditButton="true" ShowDeleteButton="true" ShowInsertButton="true" ShowCancelButton="true" ShowSelectButton="true" />
             </Columns>
         </asp:GridView>
-        </form>
+    
+    </div>
+    </form>
 </body>
 </html>
