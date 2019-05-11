@@ -13,7 +13,6 @@
             ID="gv"
             runat="server" 
             AutoGenerateColumns="False" 
-            DataKeyNames="id_bahan" 
             EmptyDataText="Tak ada data." 
             ShowFooter="true" 
             AllowPaging="true" 
