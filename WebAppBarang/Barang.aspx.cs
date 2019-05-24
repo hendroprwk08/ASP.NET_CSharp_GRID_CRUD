@@ -178,19 +178,13 @@ namespace WebAppBarang
                     //definisi objek dropdownlist
                     DropDownList ddl_jenis = e.Row.FindControl("ddl_jenis") as DropDownList;
 
-                    //set selected value
-                    DataRowView drv = e.Row.DataItem as DataRowView; //baca baris grid
-
                     //set ddl jenis
                     ddl_jenis.DataSource = dt;
                     ddl_jenis.DataTextField = "jenis";
                     ddl_jenis.DataValueField = "id_jenis";
                     ddl_jenis.DataBind();
                     ddl_jenis.Items.Insert(0, new ListItem( "-- Pilih Jenis --", "0"));
-                    Console.WriteLine(drv["ID_JENIS"].ToString());
-                    ddl_jenis.SelectedValue = drv["ID_JENIS"].ToString();
                     
-
                     //-------------- BAHAN -----------
                     s = "select id_bahan, bahan from bahan";
                     dt = new DataTable();
@@ -205,6 +199,10 @@ namespace WebAppBarang
                     ddl_bahan.DataValueField = "id_bahan";
                     ddl_bahan.DataBind();
                     ddl_bahan.Items.Insert(0, new ListItem("-- Pilih Bahan --", "0"));
+                   
+                    //set selected value
+                    DataRowView drv = e.Row.DataItem as DataRowView; //baca baris grid
+                    ddl_jenis.SelectedValue = drv["ID_JENIS"].ToString();
                     ddl_bahan.SelectedValue = drv["ID_BAHAN"].ToString();
                 }
                 catch (Exception ex)

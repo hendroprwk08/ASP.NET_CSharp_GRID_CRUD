@@ -1,5 +1,0 @@
-D:\Google Drive\aplikasibuatanku\GIT_Workshop_CRUD_ASP\ASP.NET_CSharp_GRID_CRUD\WebAppBarangWithLink\bin\WebAppBarangWithLink.dll.config
-D:\Google Drive\aplikasibuatanku\GIT_Workshop_CRUD_ASP\ASP.NET_CSharp_GRID_CRUD\WebAppBarangWithLink\bin\WebAppBarangWithLink.dll
-D:\Google Drive\aplikasibuatanku\GIT_Workshop_CRUD_ASP\ASP.NET_CSharp_GRID_CRUD\WebAppBarangWithLink\bin\WebAppBarangWithLink.pdb
-D:\Google Drive\aplikasibuatanku\GIT_Workshop_CRUD_ASP\ASP.NET_CSharp_GRID_CRUD\WebAppBarangWithLink\obj\Debug\WebAppBarangWithLink.dll
-D:\Google Drive\aplikasibuatanku\GIT_Workshop_CRUD_ASP\ASP.NET_CSharp_GRID_CRUD\WebAppBarangWithLink\obj\Debug\WebAppBarangWithLink.pdb
