@@ -31,8 +31,6 @@ namespace WebAppBarang
                 dt = new DataTable();
                 dt = d.read(s);
 
-                Console.WriteLine(dt.Rows.Count.ToString());
-
                 gv.DataSource = dt;
                 gv.DataBind();
             }
