@@ -68,11 +68,12 @@ namespace WebAppBarang
                 string jenis = (gv.Rows[e.RowIndex].FindControl("ddl_jenis") as DropDownList).SelectedValue.ToString();
                 string bahan = (gv.Rows[e.RowIndex].FindControl("ddl_bahan") as DropDownList).SelectedValue.ToString();
                 string harga = (gv.Rows[e.RowIndex].FindControl("tb_harga") as TextBox).Text.ToString().Trim();
+                harga = harga.Remove(harga.Length - 5);
 
                 d.openDb();
 
                 var s = "update barang set nama = '" + nama + "', id_jenis = '" + jenis + "', " +
-                        "id_bahan = '" + bahan + "', harga = "+ harga +"  where id_barang = " + id;
+                        "id_bahan = '" + bahan + "', harga = "+ harga +"  where id_barang = '" + id + "'";
                 Console.WriteLine(s);
                 d.execute(s);
 
